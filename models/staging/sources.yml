@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_source
+    description: "Raw US Census data from snowflake DB: raw_census_db SCHEMA: raw TABLE: raw_census"
+    database: raw_census_db
+    schema: raw
+
+    tables:
+      - name: raw_census
