@@ -19,17 +19,17 @@ select
     
     -- Calculated Economic & Social Metrics
     case 
-        when total_population > 0 then round((bachelors_degree / total_population) * 100, 2)
+        when total_population > 0 then {{ calculate_rounded_ratio('bachelors_degree', 'total_population') }}
         else 0 
     end as bachelors_degree_rate,
     
     case 
-        when total_population > 0 then round((below_poverty / total_population) * 100, 2)
+        when total_population > 0 then {{ calculate_rounded_ratio('below_poverty', 'total_population') }}
         else 0 
     end as poverty_rate,
     
     case 
-        when total_population > 0 then round((high_school_grad / total_population) * 100, 2)
+        when total_population > 0 then {{ calculate_rounded_ratio('high_school_grad', 'total_population') }}
         else 0 
     end as high_school_grad_rate
 
